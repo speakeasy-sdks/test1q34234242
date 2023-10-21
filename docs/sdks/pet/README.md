@@ -44,7 +44,7 @@ req = shared.Pet(
     id=10,
     name='doggie',
     photo_urls=[
-        'yellow',
+        'string',
     ],
     tags=[
         shared.Tag(),
@@ -92,7 +92,7 @@ req = shared.Pet(
     id=10,
     name='doggie',
     photo_urls=[
-        'male',
+        'string',
     ],
     tags=[
         shared.Tag(),
@@ -241,7 +241,7 @@ s = petstore.Petstore(
 
 req = operations.FindPetsByTagsRequest(
     tags=[
-        'engage',
+        'string',
     ],
 )
 
@@ -361,7 +361,7 @@ req = shared.Pet(
     id=10,
     name='doggie',
     photo_urls=[
-        'Associate',
+        'string',
     ],
     tags=[
         shared.Tag(),
@@ -409,7 +409,7 @@ req = shared.Pet(
     id=10,
     name='doggie',
     photo_urls=[
-        'engage',
+        'string',
     ],
     tags=[
         shared.Tag(),

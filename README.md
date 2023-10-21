@@ -7,7 +7,7 @@
 </div>
 
 <!-- Start SDK Installation -->
-# SDK Installation
+## SDK Installation
 
 ```bash
 pip install git+https://github.com/speakeasy-sdks/test1q34234242.git
@@ -16,8 +16,6 @@ pip install git+https://github.com/speakeasy-sdks/test1q34234242.git
 
 ## SDK Example Usage
 <!-- Start SDK Example Usage -->
-
-
 ```python
 import petstore
 from petstore.models import shared
@@ -34,7 +32,7 @@ req = shared.Pet(
     id=10,
     name='doggie',
     photo_urls=[
-        'yellow',
+        'string',
     ],
     tags=[
         shared.Tag(),
@@ -50,10 +48,10 @@ if res.pet is not None:
 <!-- End SDK Example Usage -->
 
 <!-- Start SDK Available Operations -->
-# Available Resources and Operations
+## Available Resources and Operations
 
 
-## [pet](docs/sdks/pet/README.md)
+### [pet](docs/sdks/pet/README.md)
 
 * [add_pet_form](docs/sdks/pet/README.md#add_pet_form) - Add a new pet to the store
 * [add_pet_json](docs/sdks/pet/README.md#add_pet_json) - Add a new pet to the store
@@ -68,7 +66,7 @@ if res.pet is not None:
 * [update_pet_raw](docs/sdks/pet/README.md#update_pet_raw) - Update an existing pet
 * [upload_file](docs/sdks/pet/README.md#upload_file) - uploads an image
 
-## [store](docs/sdks/store/README.md)
+### [store](docs/sdks/store/README.md)
 
 * [delete_order](docs/sdks/store/README.md#delete_order) - Delete purchase order by ID
 * [get_inventory](docs/sdks/store/README.md#get_inventory) - Returns pet inventories by status
@@ -77,7 +75,7 @@ if res.pet is not None:
 * [place_order_json](docs/sdks/store/README.md#place_order_json) - Place an order for a pet
 * [place_order_raw](docs/sdks/store/README.md#place_order_raw) - Place an order for a pet
 
-## [user](docs/sdks/user/README.md)
+### [user](docs/sdks/user/README.md)
 
 * [create_user_form](docs/sdks/user/README.md#create_user_form) - Create user
 * [create_user_json](docs/sdks/user/README.md#create_user_json) - Create user
@@ -93,8 +91,6 @@ if res.pet is not None:
 <!-- End SDK Available Operations -->
 
 <!-- Start Dev Containers -->
-
-
 
 <!-- End Dev Containers -->
 

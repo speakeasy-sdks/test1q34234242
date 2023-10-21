@@ -17,7 +17,7 @@ req = shared.Pet(
     id=10,
     name='doggie',
     photo_urls=[
-        'yellow',
+        'string',
     ],
     tags=[
         shared.Tag(),
