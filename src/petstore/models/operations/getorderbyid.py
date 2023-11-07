@@ -3,7 +3,7 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import order as shared_order
+from ...models.shared import order as shared_order
 from typing import Optional
 
 

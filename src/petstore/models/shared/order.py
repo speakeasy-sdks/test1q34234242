@@ -9,7 +9,7 @@ from enum import Enum
 from petstore import utils
 from typing import Optional
 
-class OrderStatus(str, Enum):
+class Status(str, Enum):
     r"""Order Status"""
     PLACED = 'placed'
     APPROVED = 'approved'
@@ -24,7 +24,7 @@ class Order:
     pet_id: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('petId'), 'exclude': lambda f: f is None }, 'form': { 'field_name': 'petId' }})
     quantity: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('quantity'), 'exclude': lambda f: f is None }, 'form': { 'field_name': 'quantity' }})
     ship_date: Optional[datetime] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('shipDate'), 'encoder': utils.datetimeisoformat(True), 'decoder': dateutil.parser.isoparse, 'exclude': lambda f: f is None }, 'form': { 'field_name': 'shipDate' }})
-    status: Optional[OrderStatus] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status'), 'exclude': lambda f: f is None }, 'form': { 'field_name': 'status' }})
+    status: Optional[Status] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status'), 'exclude': lambda f: f is None }, 'form': { 'field_name': 'status' }})
     r"""Order Status"""
     
 

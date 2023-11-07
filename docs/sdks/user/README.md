@@ -1,5 +1,5 @@
 # User
-(*user*)
+(*.user*)
 
 ## Overview
 
@@ -121,7 +121,7 @@ s = petstore.Petstore(
     petstore_auth="",
 )
 
-req = 'i5Xui)x^_Y'.encode()
+req = '0xB4dDB1Eeed'.encode()
 
 res = s.user.create_user_raw(req)
 
@@ -196,7 +196,7 @@ This can only be done by the logged in user.
 
 ```python
 import petstore
-from petstore.models import operations, shared
+from petstore.models import operations
 
 s = petstore.Petstore(
     petstore_auth="",
@@ -233,7 +233,7 @@ Get user by user name
 
 ```python
 import petstore
-from petstore.models import operations, shared
+from petstore.models import operations
 
 s = petstore.Petstore(
     petstore_auth="",
@@ -270,7 +270,7 @@ Logs user into the system
 
 ```python
 import petstore
-from petstore.models import operations, shared
+from petstore.models import operations
 
 s = petstore.Petstore(
     petstore_auth="",
@@ -280,7 +280,7 @@ req = operations.LoginUserRequest()
 
 res = s.user.login_user(req)
 
-if res.login_user_200_application_json_string is not None:
+if res.two_hundred_application_json_res is not None:
     # handle response
     pass
 ```
@@ -305,7 +305,6 @@ Logs out current logged in user session
 
 ```python
 import petstore
-from petstore.models import shared
 
 s = petstore.Petstore(
     petstore_auth="",
@@ -434,7 +433,7 @@ s = petstore.Petstore(
 )
 
 req = operations.UpdateUserRawRequest(
-    request_body='b4q0<\{RD/'.encode(),
+    request_body='0xf4D36eFb83'.encode(),
     username='Eleonore2',
 )
 

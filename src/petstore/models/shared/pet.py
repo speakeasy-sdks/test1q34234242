@@ -2,8 +2,8 @@
 
 from __future__ import annotations
 import dataclasses
-from ..shared import category as shared_category
-from ..shared import tag as shared_tag
+from .category import Category
+from .tag import Tag
 from dataclasses_json import Undefined, dataclass_json
 from enum import Enum
 from petstore import utils
@@ -21,10 +21,10 @@ class PetStatus(str, Enum):
 class Pet:
     name: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name') }, 'form': { 'field_name': 'name' }})
     photo_urls: List[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('photoUrls') }, 'form': { 'field_name': 'photoUrls' }})
-    category: Optional[shared_category.Category] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('category'), 'exclude': lambda f: f is None }, 'form': { 'field_name': 'category', 'json': True }})
+    category: Optional[Category] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('category'), 'exclude': lambda f: f is None }, 'form': { 'field_name': 'category', 'json': True }})
     id: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id'), 'exclude': lambda f: f is None }, 'form': { 'field_name': 'id' }})
     status: Optional[PetStatus] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status'), 'exclude': lambda f: f is None }, 'form': { 'field_name': 'status' }})
     r"""pet status in the store"""
-    tags: Optional[List[shared_tag.Tag]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('tags'), 'exclude': lambda f: f is None }, 'form': { 'field_name': 'tags', 'json': True }})
+    tags: Optional[List[Tag]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('tags'), 'exclude': lambda f: f is None }, 'form': { 'field_name': 'tags', 'json': True }})
     
 

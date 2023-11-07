@@ -217,7 +217,7 @@ class Pet:
         if http_res.status_code == 200:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[List[shared.Pet]])
-                res.pets = out
+                res.two_hundred_application_json_classes = out
             elif utils.match_content_type(content_type, 'application/xml'):
                 res.body = http_res.content
             else:
@@ -253,7 +253,7 @@ class Pet:
         if http_res.status_code == 200:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[List[shared.Pet]])
-                res.pets = out
+                res.two_hundred_application_json_classes = out
             elif utils.match_content_type(content_type, 'application/xml'):
                 res.body = http_res.content
             else:

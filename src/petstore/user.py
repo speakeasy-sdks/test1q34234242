@@ -271,9 +271,9 @@ class User:
             res.headers = http_res.headers
             
             if utils.match_content_type(content_type, 'application/json'):
-                res.login_user_200_application_json_string = http_res.content
+                res.two_hundred_application_json_res = http_res.content
             elif utils.match_content_type(content_type, 'application/xml'):
-                res.login_user_200_application_xml_string = http_res.content
+                res.two_hundred_application_xml_res = http_res.content
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 400 or http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:

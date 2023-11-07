@@ -8,4 +8,4 @@ from .security import *
 from .tag import *
 from .user import *
 
-__all__ = ["APIResponse","Category","Order","OrderStatus","Pet","PetStatus","Security","Tag","User"]
+__all__ = ["APIResponse","Category","Order","Pet","PetStatus","Security","Status","Tag","User"]

@@ -3,11 +3,11 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import pet as shared_pet
+from ...models.shared import pet as shared_pet
 from enum import Enum
 from typing import List, Optional
 
-class FindPetsByStatusStatus(str, Enum):
+class Status(str, Enum):
     r"""Status values that need to be considered for filter"""
     AVAILABLE = 'available'
     PENDING = 'pending'
@@ -16,7 +16,7 @@ class FindPetsByStatusStatus(str, Enum):
 
 @dataclasses.dataclass
 class FindPetsByStatusRequest:
-    status: Optional[FindPetsByStatusStatus] = dataclasses.field(default=FindPetsByStatusStatus.AVAILABLE, metadata={'query_param': { 'field_name': 'status', 'style': 'form', 'explode': True }})
+    status: Optional[Status] = dataclasses.field(default=Status.AVAILABLE, metadata={'query_param': { 'field_name': 'status', 'style': 'form', 'explode': True }})
     r"""Status values that need to be considered for filter"""
     
 
@@ -28,9 +28,9 @@ class FindPetsByStatusResponse:
     r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
-    body: Optional[bytes] = dataclasses.field(default=None)
-    pets: Optional[List[shared_pet.Pet]] = dataclasses.field(default=None)
+    two_hundred_application_json_classes: Optional[List[shared_pet.Pet]] = dataclasses.field(default=None)
     r"""successful operation"""
+    body: Optional[bytes] = dataclasses.field(default=None)
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     r"""Raw HTTP response; suitable for custom response parsing"""
     

@@ -51,7 +51,7 @@ if res.pet is not None:
 ## Available Resources and Operations
 
 
-### [pet](docs/sdks/pet/README.md)
+### [.pet](docs/sdks/pet/README.md)
 
 * [add_pet_form](docs/sdks/pet/README.md#add_pet_form) - Add a new pet to the store
 * [add_pet_json](docs/sdks/pet/README.md#add_pet_json) - Add a new pet to the store
@@ -66,7 +66,7 @@ if res.pet is not None:
 * [update_pet_raw](docs/sdks/pet/README.md#update_pet_raw) - Update an existing pet
 * [upload_file](docs/sdks/pet/README.md#upload_file) - uploads an image
 
-### [store](docs/sdks/store/README.md)
+### [.store](docs/sdks/store/README.md)
 
 * [delete_order](docs/sdks/store/README.md#delete_order) - Delete purchase order by ID
 * [get_inventory](docs/sdks/store/README.md#get_inventory) - Returns pet inventories by status
@@ -75,7 +75,7 @@ if res.pet is not None:
 * [place_order_json](docs/sdks/store/README.md#place_order_json) - Place an order for a pet
 * [place_order_raw](docs/sdks/store/README.md#place_order_raw) - Place an order for a pet
 
-### [user](docs/sdks/user/README.md)
+### [.user](docs/sdks/user/README.md)
 
 * [create_user_form](docs/sdks/user/README.md#create_user_form) - Create user
 * [create_user_json](docs/sdks/user/README.md#create_user_json) - Create user
@@ -100,8 +100,6 @@ if res.pet is not None:
 # Error Handling
 
 Handling errors in your SDK should largely match your expectations.  All operations return a response object or raise an error.  If Error objects are specified in your OpenAPI Spec, the SDK will raise the appropriate Error type.
-
-
 <!-- End Error Handling -->
 
 
@@ -115,18 +113,17 @@ You can override the default server globally by passing a server index to the `s
 
 | # | Server | Variables |
 | - | ------ | --------- |
-| 0 | `/v3` | None |
+| 0 | `https:///v3` | None |
 
 For example:
-
 
 ```python
 import petstore
 from petstore.models import shared
 
 s = petstore.Petstore(
+    server_idx=0,
     petstore_auth="",
-    server_idx=0
 )
 
 req = shared.Pet(
@@ -156,14 +153,13 @@ if res.pet is not None:
 
 The default server can also be overridden globally by passing a URL to the `server_url: str` optional parameter when initializing the SDK client instance. For example:
 
-
 ```python
 import petstore
 from petstore.models import shared
 
 s = petstore.Petstore(
+    server_url="https:///v3",
     petstore_auth="",
-    server_url="/v3"
 )
 
 req = shared.Pet(
@@ -207,9 +203,77 @@ http_client = requests.Session()
 http_client.headers.update({'x-custom-header': 'someValue'})
 s = petstore.Petstore(client: http_client)
 ```
-
-
 <!-- End Custom HTTP Client -->
+
+
+
+<!-- Start Authentication -->
+
+# Authentication
+
+## Per-Client Security Schemes
+
+Your SDK supports the following security scheme globally:
+
+| Name            | Type            | Scheme          |
+| --------------- | --------------- | --------------- |
+| `petstore_auth` | oauth2          | OAuth2 token    |
+
+To authenticate with the API the `petstore_auth` parameter must be set when initializing the SDK client instance. For example:
+
+```python
+import petstore
+from petstore.models import shared
+
+s = petstore.Petstore(
+    petstore_auth="",
+)
+
+req = shared.Pet(
+    category=shared.Category(
+        id=1,
+        name='Dogs',
+    ),
+    id=10,
+    name='doggie',
+    photo_urls=[
+        'string',
+    ],
+    tags=[
+        shared.Tag(),
+    ],
+)
+
+res = s.pet.add_pet_form(req)
+
+if res.pet is not None:
+    # handle response
+    pass
+```
+
+## Per-Operation Security Schemes
+
+Some operations in your SDK require the security scheme to be specified at the request level. For example:
+
+```python
+import petstore
+from petstore.models import operations
+
+s = petstore.Petstore()
+
+req = operations.GetPetByIDRequest(
+    pet_id=504151,
+)
+
+res = s.pet.get_pet_by_id(req, operations.GetPetByIDSecurity(
+    api_key="",
+))
+
+if res.pet is not None:
+    # handle response
+    pass
+```
+<!-- End Authentication -->
 
 <!-- Placeholder for Future Speakeasy SDK Sections -->
 

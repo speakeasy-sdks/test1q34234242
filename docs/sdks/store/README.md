@@ -1,5 +1,5 @@
 # Store
-(*store*)
+(*.store*)
 
 ## Overview
 
@@ -24,7 +24,7 @@ For valid response try integer IDs with value < 1000. Anything above 1000 or non
 
 ```python
 import petstore
-from petstore.models import operations, shared
+from petstore.models import operations
 
 s = petstore.Petstore(
     petstore_auth="",
@@ -68,7 +68,7 @@ s = petstore.Petstore()
 
 res = s.store.get_inventory("")
 
-if res.get_inventory_200_application_json_object is not None:
+if res.object is not None:
     # handle response
     pass
 ```
@@ -93,7 +93,7 @@ For valid response try integer IDs with value <= 5 or > 10. Other values will ge
 
 ```python
 import petstore
-from petstore.models import operations, shared
+from petstore.models import operations
 
 s = petstore.Petstore(
     petstore_auth="",
@@ -129,8 +129,8 @@ Place a new order in the store
 ### Example Usage
 
 ```python
-import petstore
 import dateutil.parser
+import petstore
 from petstore.models import shared
 
 s = petstore.Petstore(
@@ -141,7 +141,7 @@ req = shared.Order(
     id=10,
     pet_id=198772,
     quantity=7,
-    status=shared.OrderStatus.APPROVED,
+    status=shared.Status.APPROVED,
 )
 
 res = s.store.place_order_form(req)
@@ -170,8 +170,8 @@ Place a new order in the store
 ### Example Usage
 
 ```python
-import petstore
 import dateutil.parser
+import petstore
 from petstore.models import shared
 
 s = petstore.Petstore(
@@ -182,7 +182,7 @@ req = shared.Order(
     id=10,
     pet_id=198772,
     quantity=7,
-    status=shared.OrderStatus.APPROVED,
+    status=shared.Status.APPROVED,
 )
 
 res = s.store.place_order_json(req)
@@ -211,15 +211,15 @@ Place a new order in the store
 ### Example Usage
 
 ```python
-import petstore
 import dateutil.parser
+import petstore
 from petstore.models import shared
 
 s = petstore.Petstore(
     petstore_auth="",
 )
 
-req = 'UlJXn(4[x^'.encode()
+req = '0xcB9dC14dEe'.encode()
 
 res = s.store.place_order_raw(req)
 

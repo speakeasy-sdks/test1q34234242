@@ -22,11 +22,11 @@ class LoginUserResponse:
     r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
+    two_hundred_application_json_res: Optional[str] = dataclasses.field(default=None)
+    r"""successful operation"""
+    two_hundred_application_xml_res: Optional[str] = dataclasses.field(default=None)
+    r"""successful operation"""
     headers: Optional[Dict[str, List[str]]] = dataclasses.field(default=None)
-    login_user_200_application_json_string: Optional[str] = dataclasses.field(default=None)
-    r"""successful operation"""
-    login_user_200_application_xml_string: Optional[str] = dataclasses.field(default=None)
-    r"""successful operation"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     r"""Raw HTTP response; suitable for custom response parsing"""
     

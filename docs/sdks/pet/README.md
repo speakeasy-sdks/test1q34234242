@@ -1,5 +1,5 @@
 # Pet
-(*pet*)
+(*.pet*)
 
 ## Overview
 
@@ -132,7 +132,7 @@ s = petstore.Petstore(
     petstore_auth="",
 )
 
-req = 'W`6wC8ntZ\'.encode()
+req = '0xcf5E85CDde'.encode()
 
 res = s.pet.add_pet_raw(req)
 
@@ -161,7 +161,7 @@ Deletes a pet
 
 ```python
 import petstore
-from petstore.models import operations, shared
+from petstore.models import operations
 
 s = petstore.Petstore(
     petstore_auth="",
@@ -198,7 +198,7 @@ Multiple status values can be provided with comma separated strings
 
 ```python
 import petstore
-from petstore.models import operations, shared
+from petstore.models import operations
 
 s = petstore.Petstore(
     petstore_auth="",
@@ -208,7 +208,7 @@ req = operations.FindPetsByStatusRequest()
 
 res = s.pet.find_pets_by_status(req)
 
-if res.pets is not None:
+if res.two_hundred_application_json_classes is not None:
     # handle response
     pass
 ```
@@ -233,7 +233,7 @@ Multiple tags can be provided with comma separated strings. Use tag1, tag2, tag3
 
 ```python
 import petstore
-from petstore.models import operations, shared
+from petstore.models import operations
 
 s = petstore.Petstore(
     petstore_auth="",
@@ -247,7 +247,7 @@ req = operations.FindPetsByTagsRequest(
 
 res = s.pet.find_pets_by_tags(req)
 
-if res.pets is not None:
+if res.two_hundred_application_json_classes is not None:
     # handle response
     pass
 ```
@@ -310,7 +310,7 @@ Updates a pet in the store with form data
 
 ```python
 import petstore
-from petstore.models import operations, shared
+from petstore.models import operations
 
 s = petstore.Petstore(
     petstore_auth="",
@@ -449,7 +449,7 @@ s = petstore.Petstore(
     petstore_auth="",
 )
 
-req = ':Pnf><u_<@'.encode()
+req = '0x6bCA76De67'.encode()
 
 res = s.pet.update_pet_raw(req)
 
@@ -478,14 +478,14 @@ uploads an image
 
 ```python
 import petstore
-from petstore.models import operations, shared
+from petstore.models import operations
 
 s = petstore.Petstore(
     petstore_auth="",
 )
 
 req = operations.UploadFileRequest(
-    request_body='U?WWKB{5@q'.encode(),
+    request_body='0xc7cca7F47D'.encode(),
     pet_id=621158,
 )
 
