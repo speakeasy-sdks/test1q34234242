@@ -20,6 +20,7 @@ class Store:
         self.sdk_configuration = sdk_config
         
     
+    
     def delete_order(self, request: operations.DeleteOrderRequest) -> operations.DeleteOrderResponse:
         r"""Delete purchase order by ID
         For valid response try integer IDs with value < 1000. Anything above 1000 or nonintegers will generate API errors
@@ -31,7 +32,10 @@ class Store:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('DELETE', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -41,6 +45,7 @@ class Store:
 
         return res
 
+    
     
     def get_inventory(self, security: operations.GetInventorySecurity) -> operations.GetInventoryResponse:
         r"""Returns pet inventories by status
@@ -72,6 +77,7 @@ class Store:
         return res
 
     
+    
     def get_order_by_id(self, request: operations.GetOrderByIDRequest, accept_header_override: Optional[GetOrderByIdAcceptEnum] = None) -> operations.GetOrderByIDResponse:
         r"""Find purchase order by ID
         For valid response try integer IDs with value <= 5 or > 10. Other values will generate exceptions.
@@ -86,7 +92,10 @@ class Store:
             headers['Accept'] = 'application/json;q=1, application/xml;q=0'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -107,6 +116,7 @@ class Store:
         return res
 
     
+    
     def place_order_form(self, request: shared.Order) -> operations.PlaceOrderFormResponse:
         r"""Place an order for a pet
         Place a new order in the store
@@ -121,7 +131,10 @@ class Store:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -140,6 +153,7 @@ class Store:
         return res
 
     
+    
     def place_order_json(self, request: shared.Order) -> operations.PlaceOrderJSONResponse:
         r"""Place an order for a pet
         Place a new order in the store
@@ -154,7 +168,10 @@ class Store:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -173,6 +190,7 @@ class Store:
         return res
 
     
+    
     def place_order_raw(self, request: bytes) -> operations.PlaceOrderRawResponse:
         r"""Place an order for a pet
         Place a new order in the store
@@ -187,7 +205,10 @@ class Store:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')

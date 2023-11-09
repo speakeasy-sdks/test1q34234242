@@ -1,5 +1,5 @@
 # User
-(*.user*)
+(*user*)
 
 ## Overview
 
@@ -61,7 +61,11 @@ if res.status_code == 200:
 ### Response
 
 **[operations.CreateUserFormResponse](../../models/operations/createuserformresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## create_user_json
 
@@ -105,7 +109,11 @@ if res.status_code == 200:
 ### Response
 
 **[operations.CreateUserJSONResponse](../../models/operations/createuserjsonresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## create_user_raw
 
@@ -134,13 +142,17 @@ if res.status_code == 200:
 
 | Parameter                                  | Type                                       | Required                                   | Description                                |
 | ------------------------------------------ | ------------------------------------------ | ------------------------------------------ | ------------------------------------------ |
-| `request`                                  | [bytes](../../models//.md)                 | :heavy_check_mark:                         | The request object to use for the request. |
+| `request`                                  | [bytes](../../models/.md)                  | :heavy_check_mark:                         | The request object to use for the request. |
 
 
 ### Response
 
 **[operations.CreateUserRawResponse](../../models/operations/createuserrawresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## create_users_with_list_input
 
@@ -180,13 +192,17 @@ if res.user is not None:
 
 | Parameter                                  | Type                                       | Required                                   | Description                                |
 | ------------------------------------------ | ------------------------------------------ | ------------------------------------------ | ------------------------------------------ |
-| `request`                                  | [List[shared.User]](../../models//.md)     | :heavy_check_mark:                         | The request object to use for the request. |
+| `request`                                  | [List[shared.User]](../../models/.md)      | :heavy_check_mark:                         | The request object to use for the request. |
 
 
 ### Response
 
 **[operations.CreateUsersWithListInputResponse](../../models/operations/createuserswithlistinputresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## delete_user
 
@@ -223,7 +239,11 @@ if res.status_code == 200:
 ### Response
 
 **[operations.DeleteUserResponse](../../models/operations/deleteuserresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## get_user_by_name
 
@@ -260,7 +280,11 @@ if res.user is not None:
 ### Response
 
 **[operations.GetUserByNameResponse](../../models/operations/getuserbynameresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## login_user
 
@@ -295,7 +319,11 @@ if res.two_hundred_application_json_res is not None:
 ### Response
 
 **[operations.LoginUserResponse](../../models/operations/loginuserresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## logout_user
 
@@ -322,7 +350,11 @@ if res.status_code == 200:
 ### Response
 
 **[operations.LogoutUserResponse](../../models/operations/logoutuserresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## update_user_form
 
@@ -369,7 +401,11 @@ if res.status_code == 200:
 ### Response
 
 **[operations.UpdateUserFormResponse](../../models/operations/updateuserformresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## update_user_json
 
@@ -416,7 +452,11 @@ if res.status_code == 200:
 ### Response
 
 **[operations.UpdateUserJSONResponse](../../models/operations/updateuserjsonresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## update_user_raw
 
@@ -454,4 +494,8 @@ if res.status_code == 200:
 ### Response
 
 **[operations.UpdateUserRawResponse](../../models/operations/updateuserrawresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

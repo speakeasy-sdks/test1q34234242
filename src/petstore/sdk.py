@@ -7,7 +7,7 @@ from .store import Store
 from .user import User
 from petstore import utils
 from petstore.models import shared
-from typing import Dict
+from typing import Callable, Dict, Union
 
 class Petstore:
     r"""Swagger Petstore - OpenAPI 3.0: This is a sample Pet Store Server based on the OpenAPI 3.0 specification.  You can find out more about
@@ -34,7 +34,7 @@ class Petstore:
     sdk_configuration: SDKConfiguration
 
     def __init__(self,
-                 petstore_auth: str,
+                 petstore_auth: Union[str,Callable[[], str]],
                  server_idx: int = None,
                  server_url: str = None,
                  url_params: Dict[str, str] = None,
@@ -44,7 +44,7 @@ class Petstore:
         """Instantiates the SDK configuring it with the provided parameters.
         
         :param petstore_auth: The petstore_auth required for authentication
-        :type petstore_auth: str
+        :type petstore_auth: Union[str,Callable[[], str]]
         :param server_idx: The index of the server to use for all operations
         :type server_idx: int
         :param server_url: The server URL to use for all operations
@@ -59,15 +59,13 @@ class Petstore:
         if client is None:
             client = requests_http.Session()
         
-        
-        security_client = utils.configure_security_client(client, shared.Security(petstore_auth = petstore_auth))
-        
+        security = shared.Security(petstore_auth = petstore_auth)
         
         if server_url is not None:
             if url_params is not None:
                 server_url = utils.template_url(server_url, url_params)
 
-        self.sdk_configuration = SDKConfiguration(client, security_client, server_url, server_idx, retry_config=retry_config)
+        self.sdk_configuration = SDKConfiguration(client, security, server_url, server_idx, retry_config=retry_config)
        
         self._init_sdks()
     

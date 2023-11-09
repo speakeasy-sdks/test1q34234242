@@ -1,5 +1,5 @@
 # Pet
-(*.pet*)
+(*pet*)
 
 ## Overview
 
@@ -68,7 +68,11 @@ if res.pet is not None:
 ### Response
 
 **[operations.AddPetFormResponse](../../models/operations/addpetformresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## add_pet_json
 
@@ -116,7 +120,11 @@ if res.pet is not None:
 ### Response
 
 **[operations.AddPetJSONResponse](../../models/operations/addpetjsonresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## add_pet_raw
 
@@ -145,13 +153,17 @@ if res.pet is not None:
 
 | Parameter                                  | Type                                       | Required                                   | Description                                |
 | ------------------------------------------ | ------------------------------------------ | ------------------------------------------ | ------------------------------------------ |
-| `request`                                  | [bytes](../../models//.md)                 | :heavy_check_mark:                         | The request object to use for the request. |
+| `request`                                  | [bytes](../../models/.md)                  | :heavy_check_mark:                         | The request object to use for the request. |
 
 
 ### Response
 
 **[operations.AddPetRawResponse](../../models/operations/addpetrawresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## delete_pet
 
@@ -188,7 +200,11 @@ if res.status_code == 200:
 ### Response
 
 **[operations.DeletePetResponse](../../models/operations/deletepetresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## find_pets_by_status
 
@@ -223,7 +239,11 @@ if res.two_hundred_application_json_classes is not None:
 ### Response
 
 **[operations.FindPetsByStatusResponse](../../models/operations/findpetsbystatusresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## find_pets_by_tags
 
@@ -262,7 +282,11 @@ if res.two_hundred_application_json_classes is not None:
 ### Response
 
 **[operations.FindPetsByTagsResponse](../../models/operations/findpetsbytagsresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## get_pet_by_id
 
@@ -300,7 +324,11 @@ if res.pet is not None:
 ### Response
 
 **[operations.GetPetByIDResponse](../../models/operations/getpetbyidresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## update_pet_with_form
 
@@ -337,7 +365,11 @@ if res.status_code == 200:
 ### Response
 
 **[operations.UpdatePetWithFormResponse](../../models/operations/updatepetwithformresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## update_pet_form
 
@@ -385,7 +417,11 @@ if res.pet is not None:
 ### Response
 
 **[operations.UpdatePetFormResponse](../../models/operations/updatepetformresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## update_pet_json
 
@@ -433,7 +469,11 @@ if res.pet is not None:
 ### Response
 
 **[operations.UpdatePetJSONResponse](../../models/operations/updatepetjsonresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## update_pet_raw
 
@@ -462,13 +502,17 @@ if res.pet is not None:
 
 | Parameter                                  | Type                                       | Required                                   | Description                                |
 | ------------------------------------------ | ------------------------------------------ | ------------------------------------------ | ------------------------------------------ |
-| `request`                                  | [bytes](../../models//.md)                 | :heavy_check_mark:                         | The request object to use for the request. |
+| `request`                                  | [bytes](../../models/.md)                  | :heavy_check_mark:                         | The request object to use for the request. |
 
 
 ### Response
 
 **[operations.UpdatePetRawResponse](../../models/operations/updatepetrawresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## upload_file
 
@@ -506,4 +550,8 @@ if res.api_response is not None:
 ### Response
 
 **[operations.UploadFileResponse](../../models/operations/uploadfileresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

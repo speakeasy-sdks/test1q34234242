@@ -38,6 +38,7 @@ class User:
         self.sdk_configuration = sdk_config
         
     
+    
     def create_user_form(self, request: shared.User, accept_header_override: Optional[CreateUserFormAcceptEnum] = None) -> operations.CreateUserFormResponse:
         r"""Create user
         This can only be done by the logged in user.
@@ -55,7 +56,10 @@ class User:
             headers['Accept'] = 'application/json;q=1, application/xml;q=0'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -76,6 +80,7 @@ class User:
         return res
 
     
+    
     def create_user_json(self, request: shared.User, accept_header_override: Optional[CreateUserJsonAcceptEnum] = None) -> operations.CreateUserJSONResponse:
         r"""Create user
         This can only be done by the logged in user.
@@ -93,7 +98,10 @@ class User:
             headers['Accept'] = 'application/json;q=1, application/xml;q=0'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -114,6 +122,7 @@ class User:
         return res
 
     
+    
     def create_user_raw(self, request: bytes, accept_header_override: Optional[CreateUserRawAcceptEnum] = None) -> operations.CreateUserRawResponse:
         r"""Create user
         This can only be done by the logged in user.
@@ -131,7 +140,10 @@ class User:
             headers['Accept'] = 'application/json;q=1, application/xml;q=0'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -152,6 +164,7 @@ class User:
         return res
 
     
+    
     def create_users_with_list_input(self, request: List[shared.User], accept_header_override: Optional[CreateUsersWithListInputAcceptEnum] = None) -> operations.CreateUsersWithListInputResponse:
         r"""Creates list of users with given input array
         Creates list of users with given input array
@@ -169,7 +182,10 @@ class User:
             headers['Accept'] = 'application/json;q=1, application/xml;q=0'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -192,6 +208,7 @@ class User:
         return res
 
     
+    
     def delete_user(self, request: operations.DeleteUserRequest) -> operations.DeleteUserResponse:
         r"""Delete user
         This can only be done by the logged in user.
@@ -203,7 +220,10 @@ class User:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('DELETE', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -213,6 +233,7 @@ class User:
 
         return res
 
+    
     
     def get_user_by_name(self, request: operations.GetUserByNameRequest, accept_header_override: Optional[GetUserByNameAcceptEnum] = None) -> operations.GetUserByNameResponse:
         r"""Get user by user name"""
@@ -226,7 +247,10 @@ class User:
             headers['Accept'] = 'application/json;q=1, application/xml;q=0'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -247,6 +271,7 @@ class User:
         return res
 
     
+    
     def login_user(self, request: operations.LoginUserRequest, accept_header_override: Optional[LoginUserAcceptEnum] = None) -> operations.LoginUserResponse:
         r"""Logs user into the system"""
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
@@ -260,7 +285,10 @@ class User:
             headers['Accept'] = 'application/json;q=1, application/xml;q=0'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -282,6 +310,7 @@ class User:
         return res
 
     
+    
     def logout_user(self) -> operations.LogoutUserResponse:
         r"""Logs out current logged in user session"""
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
@@ -291,7 +320,10 @@ class User:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -305,6 +337,7 @@ class User:
 
         return res
 
+    
     
     def update_user_form(self, request: operations.UpdateUserFormRequest) -> operations.UpdateUserFormResponse:
         r"""Update user
@@ -320,7 +353,10 @@ class User:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('PUT', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -334,6 +370,7 @@ class User:
 
         return res
 
+    
     
     def update_user_json(self, request: operations.UpdateUserJSONRequest) -> operations.UpdateUserJSONResponse:
         r"""Update user
@@ -349,7 +386,10 @@ class User:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('PUT', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -363,6 +403,7 @@ class User:
 
         return res
 
+    
     
     def update_user_raw(self, request: operations.UpdateUserRawRequest) -> operations.UpdateUserRawResponse:
         r"""Update user
@@ -378,7 +419,10 @@ class User:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('PUT', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')

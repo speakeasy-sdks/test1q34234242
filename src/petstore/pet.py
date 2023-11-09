@@ -52,6 +52,7 @@ class Pet:
         self.sdk_configuration = sdk_config
         
     
+    
     def add_pet_form(self, request: shared.Pet, accept_header_override: Optional[AddPetFormAcceptEnum] = None) -> operations.AddPetFormResponse:
         r"""Add a new pet to the store
         Add a new pet to the store
@@ -71,7 +72,10 @@ class Pet:
             headers['Accept'] = 'application/json;q=1, application/xml;q=0'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -92,6 +96,7 @@ class Pet:
         return res
 
     
+    
     def add_pet_json(self, request: shared.Pet, accept_header_override: Optional[AddPetJsonAcceptEnum] = None) -> operations.AddPetJSONResponse:
         r"""Add a new pet to the store
         Add a new pet to the store
@@ -111,7 +116,10 @@ class Pet:
             headers['Accept'] = 'application/json;q=1, application/xml;q=0'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -132,6 +140,7 @@ class Pet:
         return res
 
     
+    
     def add_pet_raw(self, request: bytes, accept_header_override: Optional[AddPetRawAcceptEnum] = None) -> operations.AddPetRawResponse:
         r"""Add a new pet to the store
         Add a new pet to the store
@@ -151,7 +160,10 @@ class Pet:
             headers['Accept'] = 'application/json;q=1, application/xml;q=0'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -172,6 +184,7 @@ class Pet:
         return res
 
     
+    
     def delete_pet(self, request: operations.DeletePetRequest) -> operations.DeletePetResponse:
         r"""Deletes a pet"""
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
@@ -181,7 +194,10 @@ class Pet:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('DELETE', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -191,6 +207,7 @@ class Pet:
 
         return res
 
+    
     
     def find_pets_by_status(self, request: operations.FindPetsByStatusRequest, accept_header_override: Optional[FindPetsByStatusAcceptEnum] = None) -> operations.FindPetsByStatusResponse:
         r"""Finds Pets by status
@@ -207,7 +224,10 @@ class Pet:
             headers['Accept'] = 'application/json;q=1, application/xml;q=0'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -228,6 +248,7 @@ class Pet:
         return res
 
     
+    
     def find_pets_by_tags(self, request: operations.FindPetsByTagsRequest, accept_header_override: Optional[FindPetsByTagsAcceptEnum] = None) -> operations.FindPetsByTagsResponse:
         r"""Finds Pets by tags
         Multiple tags can be provided with comma separated strings. Use tag1, tag2, tag3 for testing.
@@ -243,7 +264,10 @@ class Pet:
             headers['Accept'] = 'application/json;q=1, application/xml;q=0'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -263,6 +287,7 @@ class Pet:
 
         return res
 
+    
     
     def get_pet_by_id(self, request: operations.GetPetByIDRequest, security: operations.GetPetByIDSecurity, accept_header_override: Optional[GetPetByIdAcceptEnum] = None) -> operations.GetPetByIDResponse:
         r"""Find pet by ID
@@ -299,6 +324,7 @@ class Pet:
         return res
 
     
+    
     def update_pet_with_form(self, request: operations.UpdatePetWithFormRequest) -> operations.UpdatePetWithFormResponse:
         r"""Updates a pet in the store with form data"""
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
@@ -309,7 +335,10 @@ class Pet:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -319,6 +348,7 @@ class Pet:
 
         return res
 
+    
     
     def update_pet_form(self, request: shared.Pet, accept_header_override: Optional[UpdatePetFormAcceptEnum] = None) -> operations.UpdatePetFormResponse:
         r"""Update an existing pet
@@ -339,7 +369,10 @@ class Pet:
             headers['Accept'] = 'application/json;q=1, application/xml;q=0'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('PUT', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -360,6 +393,7 @@ class Pet:
         return res
 
     
+    
     def update_pet_json(self, request: shared.Pet, accept_header_override: Optional[UpdatePetJsonAcceptEnum] = None) -> operations.UpdatePetJSONResponse:
         r"""Update an existing pet
         Update an existing pet by Id
@@ -379,7 +413,10 @@ class Pet:
             headers['Accept'] = 'application/json;q=1, application/xml;q=0'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('PUT', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -400,6 +437,7 @@ class Pet:
         return res
 
     
+    
     def update_pet_raw(self, request: bytes, accept_header_override: Optional[UpdatePetRawAcceptEnum] = None) -> operations.UpdatePetRawResponse:
         r"""Update an existing pet
         Update an existing pet by Id
@@ -419,7 +457,10 @@ class Pet:
             headers['Accept'] = 'application/json;q=1, application/xml;q=0'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('PUT', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -440,6 +481,7 @@ class Pet:
         return res
 
     
+    
     def upload_file(self, request: operations.UploadFileRequest) -> operations.UploadFileResponse:
         r"""uploads an image"""
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
@@ -453,7 +495,10 @@ class Pet:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, params=query_params, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')

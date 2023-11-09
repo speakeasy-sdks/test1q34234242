@@ -1,5 +1,5 @@
 # Store
-(*.store*)
+(*store*)
 
 ## Overview
 
@@ -51,7 +51,11 @@ if res.status_code == 200:
 ### Response
 
 **[operations.DeleteOrderResponse](../../models/operations/deleteorderresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## get_inventory
 
@@ -83,7 +87,11 @@ if res.object is not None:
 ### Response
 
 **[operations.GetInventoryResponse](../../models/operations/getinventoryresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## get_order_by_id
 
@@ -120,7 +128,11 @@ if res.order is not None:
 ### Response
 
 **[operations.GetOrderByIDResponse](../../models/operations/getorderbyidresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## place_order_form
 
@@ -161,7 +173,11 @@ if res.order is not None:
 ### Response
 
 **[operations.PlaceOrderFormResponse](../../models/operations/placeorderformresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## place_order_json
 
@@ -202,7 +218,11 @@ if res.order is not None:
 ### Response
 
 **[operations.PlaceOrderJSONResponse](../../models/operations/placeorderjsonresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## place_order_raw
 
@@ -232,10 +252,14 @@ if res.order is not None:
 
 | Parameter                                  | Type                                       | Required                                   | Description                                |
 | ------------------------------------------ | ------------------------------------------ | ------------------------------------------ | ------------------------------------------ |
-| `request`                                  | [bytes](../../models//.md)                 | :heavy_check_mark:                         | The request object to use for the request. |
+| `request`                                  | [bytes](../../models/.md)                  | :heavy_check_mark:                         | The request object to use for the request. |
 
 
 ### Response
 
 **[operations.PlaceOrderRawResponse](../../models/operations/placeorderrawresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
