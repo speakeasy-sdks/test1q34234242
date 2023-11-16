@@ -19,12 +19,12 @@ class FindPetsByTagsRequest:
 class FindPetsByTagsResponse:
     content_type: str = dataclasses.field()
     r"""HTTP response content type for this operation"""
+    raw_response: requests_http.Response = dataclasses.field()
+    r"""Raw HTTP response; suitable for custom response parsing"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
     two_hundred_application_json_classes: Optional[List[shared_pet.Pet]] = dataclasses.field(default=None)
     r"""successful operation"""
     body: Optional[bytes] = dataclasses.field(default=None)
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
-    r"""Raw HTTP response; suitable for custom response parsing"""
     
 
