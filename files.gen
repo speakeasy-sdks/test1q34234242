@@ -10,6 +10,7 @@ src/petstore/utils/__init__.py
 src/petstore/utils/retries.py
 src/petstore/utils/utils.py
 src/petstore/models/errors/sdkerror.py
+tests/helpers.py
 src/petstore/models/operations/addpet_form.py
 src/petstore/models/operations/addpet_json.py
 src/petstore/models/operations/addpet_raw.py
