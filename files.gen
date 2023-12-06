@@ -51,7 +51,6 @@ src/petstore/models/__init__.py
 src/petstore/models/errors/__init__.py
 src/petstore/models/operations/__init__.py
 src/petstore/models/shared/__init__.py
-USAGE.md
 docs/models/operations/addpetformresponse.md
 docs/models/operations/addpetjsonresponse.md
 docs/models/operations/addpetrawresponse.md
@@ -111,4 +110,5 @@ docs/sdks/petstore/README.md
 docs/sdks/pet/README.md
 docs/sdks/store/README.md
 docs/sdks/user/README.md
+USAGE.md
 .gitattributes
