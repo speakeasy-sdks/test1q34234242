@@ -30,7 +30,7 @@ import petstore
 from petstore.models import shared
 
 s = petstore.Petstore(
-    petstore_auth="",
+    petstore_auth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
 )
 
 req = shared.User(
@@ -78,7 +78,7 @@ import petstore
 from petstore.models import shared
 
 s = petstore.Petstore(
-    petstore_auth="",
+    petstore_auth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
 )
 
 req = shared.User(
@@ -126,7 +126,7 @@ import petstore
 from petstore.models import shared
 
 s = petstore.Petstore(
-    petstore_auth="",
+    petstore_auth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
 )
 
 req = '0xB4dDB1Eeed'.encode()
@@ -165,7 +165,7 @@ import petstore
 from petstore.models import shared
 
 s = petstore.Petstore(
-    petstore_auth="",
+    petstore_auth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
 )
 
 req = [
@@ -215,7 +215,7 @@ import petstore
 from petstore.models import operations
 
 s = petstore.Petstore(
-    petstore_auth="",
+    petstore_auth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
 )
 
 req = operations.DeleteUserRequest(
@@ -256,7 +256,7 @@ import petstore
 from petstore.models import operations
 
 s = petstore.Petstore(
-    petstore_auth="",
+    petstore_auth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
 )
 
 req = operations.GetUserByNameRequest(
@@ -297,7 +297,7 @@ import petstore
 from petstore.models import operations
 
 s = petstore.Petstore(
-    petstore_auth="",
+    petstore_auth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
 )
 
 req = operations.LoginUserRequest()
@@ -335,7 +335,7 @@ Logs out current logged in user session
 import petstore
 
 s = petstore.Petstore(
-    petstore_auth="",
+    petstore_auth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
 )
 
 
@@ -367,7 +367,7 @@ import petstore
 from petstore.models import operations, shared
 
 s = petstore.Petstore(
-    petstore_auth="",
+    petstore_auth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
 )
 
 req = operations.UpdateUserFormRequest(
@@ -418,7 +418,7 @@ import petstore
 from petstore.models import operations, shared
 
 s = petstore.Petstore(
-    petstore_auth="",
+    petstore_auth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
 )
 
 req = operations.UpdateUserJSONRequest(
@@ -469,7 +469,7 @@ import petstore
 from petstore.models import operations, shared
 
 s = petstore.Petstore(
-    petstore_auth="",
+    petstore_auth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
 )
 
 req = operations.UpdateUserRawRequest(

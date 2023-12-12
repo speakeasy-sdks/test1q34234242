@@ -24,7 +24,7 @@ import petstore
 from petstore.models import shared
 
 s = petstore.Petstore(
-    petstore_auth="",
+    petstore_auth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
 )
 
 req = shared.Pet(
@@ -110,7 +110,7 @@ import petstore
 from petstore.models import shared
 
 s = petstore.Petstore(
-    petstore_auth="",
+    petstore_auth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
 )
 
 req = shared.Pet(
@@ -162,7 +162,7 @@ from petstore.models import shared
 
 s = petstore.Petstore(
     server_idx=0,
-    petstore_auth="",
+    petstore_auth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
 )
 
 req = shared.Pet(
@@ -197,7 +197,7 @@ from petstore.models import shared
 
 s = petstore.Petstore(
     server_url="https:///v3",
-    petstore_auth="",
+    petstore_auth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
 )
 
 req = shared.Pet(
@@ -260,7 +260,7 @@ import petstore
 from petstore.models import shared
 
 s = petstore.Petstore(
-    petstore_auth="",
+    petstore_auth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
 )
 
 req = shared.Pet(
@@ -299,7 +299,7 @@ req = operations.GetPetByIDRequest(
 )
 
 res = s.pet.get_pet_by_id(req, operations.GetPetByIDSecurity(
-    api_key="",
+    api_key="<YOUR_API_KEY_HERE>",
 ))
 
 if res.pet is not None:

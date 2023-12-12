@@ -4,7 +4,7 @@ import petstore
 from petstore.models import shared
 
 s = petstore.Petstore(
-    petstore_auth="",
+    petstore_auth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
 )
 
 req = shared.Pet(

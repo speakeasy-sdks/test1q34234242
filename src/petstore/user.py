@@ -39,7 +39,7 @@ class User:
         
     
     
-    def create_user_form(self, request: shared.User, accept_header_override: Optional[CreateUserFormAcceptEnum] = None) -> operations.CreateUserFormResponse:
+    def create_user_form(self, request: Optional[shared.User], accept_header_override: Optional[CreateUserFormAcceptEnum] = None) -> operations.CreateUserFormResponse:
         r"""Create user
         This can only be done by the logged in user.
         """
@@ -47,7 +47,7 @@ class User:
         
         url = base_url + '/user'
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request", False, True, 'form')
+        req_content_type, data, form = utils.serialize_request_body(request, Optional[shared.User], "request", False, True, 'form')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if accept_header_override is not None:
@@ -81,7 +81,7 @@ class User:
 
     
     
-    def create_user_json(self, request: shared.User, accept_header_override: Optional[CreateUserJsonAcceptEnum] = None) -> operations.CreateUserJSONResponse:
+    def create_user_json(self, request: Optional[shared.User], accept_header_override: Optional[CreateUserJsonAcceptEnum] = None) -> operations.CreateUserJSONResponse:
         r"""Create user
         This can only be done by the logged in user.
         """
@@ -89,7 +89,7 @@ class User:
         
         url = base_url + '/user'
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, Optional[shared.User], "request", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if accept_header_override is not None:
@@ -123,7 +123,7 @@ class User:
 
     
     
-    def create_user_raw(self, request: bytes, accept_header_override: Optional[CreateUserRawAcceptEnum] = None) -> operations.CreateUserRawResponse:
+    def create_user_raw(self, request: Optional[bytes], accept_header_override: Optional[CreateUserRawAcceptEnum] = None) -> operations.CreateUserRawResponse:
         r"""Create user
         This can only be done by the logged in user.
         """
@@ -131,7 +131,7 @@ class User:
         
         url = base_url + '/user'
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request", False, True, 'raw')
+        req_content_type, data, form = utils.serialize_request_body(request, Optional[bytes], "request", False, True, 'raw')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if accept_header_override is not None:
@@ -165,7 +165,7 @@ class User:
 
     
     
-    def create_users_with_list_input(self, request: List[shared.User], accept_header_override: Optional[CreateUsersWithListInputAcceptEnum] = None) -> operations.CreateUsersWithListInputResponse:
+    def create_users_with_list_input(self, request: Optional[List[shared.User]], accept_header_override: Optional[CreateUsersWithListInputAcceptEnum] = None) -> operations.CreateUsersWithListInputResponse:
         r"""Creates list of users with given input array
         Creates list of users with given input array
         """
@@ -173,7 +173,7 @@ class User:
         
         url = base_url + '/user/createWithList'
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, Optional[List[shared.User]], "request", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if accept_header_override is not None:
@@ -347,7 +347,7 @@ class User:
         
         url = utils.generate_url(operations.UpdateUserFormRequest, base_url, '/user/{username}', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "user", False, True, 'form')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.UpdateUserFormRequest, "user", False, True, 'form')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = '*/*'
@@ -380,7 +380,7 @@ class User:
         
         url = utils.generate_url(operations.UpdateUserJSONRequest, base_url, '/user/{username}', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "user", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.UpdateUserJSONRequest, "user", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = '*/*'
@@ -413,7 +413,7 @@ class User:
         
         url = utils.generate_url(operations.UpdateUserRawRequest, base_url, '/user/{username}', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request_body", False, True, 'raw')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.UpdateUserRawRequest, "request_body", False, True, 'raw')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = '*/*'

@@ -2,10 +2,11 @@
 
 from __future__ import annotations
 import dataclasses
+from typing import Optional
 
 
 @dataclasses.dataclass
 class Security:
-    petstore_auth: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'oauth2', 'field_name': 'Authorization' }})
+    petstore_auth: Optional[str] = dataclasses.field(default=None, metadata={'security': { 'scheme': True, 'type': 'oauth2', 'field_name': 'Authorization' }})
     
 

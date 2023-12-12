@@ -27,7 +27,7 @@ import petstore
 from petstore.models import operations
 
 s = petstore.Petstore(
-    petstore_auth="",
+    petstore_auth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
 )
 
 req = operations.DeleteOrderRequest(
@@ -70,7 +70,7 @@ from petstore.models import operations
 s = petstore.Petstore()
 
 
-res = s.store.get_inventory("")
+res = s.store.get_inventory("<YOUR_API_KEY_HERE>")
 
 if res.object is not None:
     # handle response
@@ -104,7 +104,7 @@ import petstore
 from petstore.models import operations
 
 s = petstore.Petstore(
-    petstore_auth="",
+    petstore_auth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
 )
 
 req = operations.GetOrderByIDRequest(
@@ -146,7 +146,7 @@ import petstore
 from petstore.models import shared
 
 s = petstore.Petstore(
-    petstore_auth="",
+    petstore_auth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
 )
 
 req = shared.Order(
@@ -191,7 +191,7 @@ import petstore
 from petstore.models import shared
 
 s = petstore.Petstore(
-    petstore_auth="",
+    petstore_auth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
 )
 
 req = shared.Order(
@@ -236,7 +236,7 @@ import petstore
 from petstore.models import shared
 
 s = petstore.Petstore(
-    petstore_auth="",
+    petstore_auth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
 )
 
 req = '0xcB9dC14dEe'.encode()

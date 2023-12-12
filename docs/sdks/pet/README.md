@@ -33,7 +33,7 @@ import petstore
 from petstore.models import shared
 
 s = petstore.Petstore(
-    petstore_auth="",
+    petstore_auth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
 )
 
 req = shared.Pet(
@@ -85,7 +85,7 @@ import petstore
 from petstore.models import shared
 
 s = petstore.Petstore(
-    petstore_auth="",
+    petstore_auth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
 )
 
 req = shared.Pet(
@@ -137,7 +137,7 @@ import petstore
 from petstore.models import shared
 
 s = petstore.Petstore(
-    petstore_auth="",
+    petstore_auth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
 )
 
 req = '0xcf5E85CDde'.encode()
@@ -176,7 +176,7 @@ import petstore
 from petstore.models import operations
 
 s = petstore.Petstore(
-    petstore_auth="",
+    petstore_auth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
 )
 
 req = operations.DeletePetRequest(
@@ -217,7 +217,7 @@ import petstore
 from petstore.models import operations
 
 s = petstore.Petstore(
-    petstore_auth="",
+    petstore_auth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
 )
 
 req = operations.FindPetsByStatusRequest()
@@ -256,7 +256,7 @@ import petstore
 from petstore.models import operations
 
 s = petstore.Petstore(
-    petstore_auth="",
+    petstore_auth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
 )
 
 req = operations.FindPetsByTagsRequest(
@@ -305,7 +305,7 @@ req = operations.GetPetByIDRequest(
 )
 
 res = s.pet.get_pet_by_id(req, operations.GetPetByIDSecurity(
-    api_key="",
+    api_key="<YOUR_API_KEY_HERE>",
 ))
 
 if res.pet is not None:
@@ -341,7 +341,7 @@ import petstore
 from petstore.models import operations
 
 s = petstore.Petstore(
-    petstore_auth="",
+    petstore_auth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
 )
 
 req = operations.UpdatePetWithFormRequest(
@@ -382,7 +382,7 @@ import petstore
 from petstore.models import shared
 
 s = petstore.Petstore(
-    petstore_auth="",
+    petstore_auth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
 )
 
 req = shared.Pet(
@@ -434,7 +434,7 @@ import petstore
 from petstore.models import shared
 
 s = petstore.Petstore(
-    petstore_auth="",
+    petstore_auth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
 )
 
 req = shared.Pet(
@@ -486,7 +486,7 @@ import petstore
 from petstore.models import shared
 
 s = petstore.Petstore(
-    petstore_auth="",
+    petstore_auth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
 )
 
 req = '0x6bCA76De67'.encode()
@@ -525,7 +525,7 @@ import petstore
 from petstore.models import operations
 
 s = petstore.Petstore(
-    petstore_auth="",
+    petstore_auth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
 )
 
 req = operations.UploadFileRequest(

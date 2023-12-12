@@ -117,7 +117,7 @@ class Store:
 
     
     
-    def place_order_form(self, request: shared.Order) -> operations.PlaceOrderFormResponse:
+    def place_order_form(self, request: Optional[shared.Order]) -> operations.PlaceOrderFormResponse:
         r"""Place an order for a pet
         Place a new order in the store
         """
@@ -125,7 +125,7 @@ class Store:
         
         url = base_url + '/store/order'
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request", False, True, 'form')
+        req_content_type, data, form = utils.serialize_request_body(request, Optional[shared.Order], "request", False, True, 'form')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = 'application/json'
@@ -154,7 +154,7 @@ class Store:
 
     
     
-    def place_order_json(self, request: shared.Order) -> operations.PlaceOrderJSONResponse:
+    def place_order_json(self, request: Optional[shared.Order]) -> operations.PlaceOrderJSONResponse:
         r"""Place an order for a pet
         Place a new order in the store
         """
@@ -162,7 +162,7 @@ class Store:
         
         url = base_url + '/store/order'
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, Optional[shared.Order], "request", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = 'application/json'
@@ -191,7 +191,7 @@ class Store:
 
     
     
-    def place_order_raw(self, request: bytes) -> operations.PlaceOrderRawResponse:
+    def place_order_raw(self, request: Optional[bytes]) -> operations.PlaceOrderRawResponse:
         r"""Place an order for a pet
         Place a new order in the store
         """
@@ -199,7 +199,7 @@ class Store:
         
         url = base_url + '/store/order'
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request", False, True, 'raw')
+        req_content_type, data, form = utils.serialize_request_body(request, Optional[bytes], "request", False, True, 'raw')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = 'application/json'

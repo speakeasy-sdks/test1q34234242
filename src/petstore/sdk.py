@@ -7,7 +7,7 @@ from .store import Store
 from .user import User
 from petstore import utils
 from petstore.models import shared
-from typing import Callable, Dict, Union
+from typing import Dict, Optional
 
 class Petstore:
     r"""Swagger Petstore - OpenAPI 3.0: This is a sample Pet Store Server based on the OpenAPI 3.0 specification.  You can find out more about
@@ -34,7 +34,7 @@ class Petstore:
     sdk_configuration: SDKConfiguration
 
     def __init__(self,
-                 petstore_auth: Union[str,Callable[[], str]],
+                 petstore_auth: Optional[str]  = None,
                  server_idx: int = None,
                  server_url: str = None,
                  url_params: Dict[str, str] = None,
