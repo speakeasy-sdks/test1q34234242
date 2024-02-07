@@ -11,9 +11,9 @@ from typing import Optional
 class UploadFileRequest:
     pet_id: int = dataclasses.field(metadata={'path_param': { 'field_name': 'petId', 'style': 'simple', 'explode': False }})
     r"""ID of pet to update"""
+    request_body: Optional[bytes] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/octet-stream' }})
     additional_metadata: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'additionalMetadata', 'style': 'form', 'explode': True }})
     r"""Additional Metadata"""
-    request_body: Optional[bytes] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/octet-stream' }})
     
 
 
@@ -22,10 +22,10 @@ class UploadFileRequest:
 class UploadFileResponse:
     content_type: str = dataclasses.field()
     r"""HTTP response content type for this operation"""
-    raw_response: requests_http.Response = dataclasses.field()
-    r"""Raw HTTP response; suitable for custom response parsing"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
+    raw_response: requests_http.Response = dataclasses.field()
+    r"""Raw HTTP response; suitable for custom response parsing"""
     api_response: Optional[shared_apiresponse.APIResponse] = dataclasses.field(default=None)
     r"""successful operation"""
     

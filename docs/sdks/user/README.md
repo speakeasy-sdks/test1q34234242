@@ -371,6 +371,7 @@ s = petstore.Petstore(
 )
 
 req = operations.UpdateUserFormRequest(
+    username='Bo_Lynch4',
     user=shared.User(
         email='john@email.com',
         first_name='John',
@@ -381,7 +382,6 @@ req = operations.UpdateUserFormRequest(
         user_status=1,
         username='theUser',
     ),
-    username='Bo_Lynch4',
 )
 
 res = s.user.update_user_form(req)
@@ -422,6 +422,7 @@ s = petstore.Petstore(
 )
 
 req = operations.UpdateUserJSONRequest(
+    username='Alanna_Waters81',
     user=shared.User(
         email='john@email.com',
         first_name='John',
@@ -432,7 +433,6 @@ req = operations.UpdateUserJSONRequest(
         user_status=1,
         username='theUser',
     ),
-    username='Alanna_Waters81',
 )
 
 res = s.user.update_user_json(req)
@@ -473,8 +473,8 @@ s = petstore.Petstore(
 )
 
 req = operations.UpdateUserRawRequest(
-    request_body='0xf4D36eFb83'.encode(),
-    username='Eleonore2',
+    username='Maximus.DuBuque29',
+    request_body='0xeFb836560B'.encode(),
 )
 
 res = s.user.update_user_raw(req)

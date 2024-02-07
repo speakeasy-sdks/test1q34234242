@@ -8,15 +8,15 @@ s = petstore.Petstore(
 )
 
 req = shared.Pet(
+    name='doggie',
+    photo_urls=[
+        'string',
+    ],
     category=shared.Category(
         id=1,
         name='Dogs',
     ),
     id=10,
-    name='doggie',
-    photo_urls=[
-        'string',
-    ],
     tags=[
         shared.Tag(),
     ],

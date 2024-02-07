@@ -37,15 +37,15 @@ s = petstore.Petstore(
 )
 
 req = shared.Pet(
+    name='doggie',
+    photo_urls=[
+        'string',
+    ],
     category=shared.Category(
         id=1,
         name='Dogs',
     ),
     id=10,
-    name='doggie',
-    photo_urls=[
-        'string',
-    ],
     tags=[
         shared.Tag(),
     ],
@@ -89,15 +89,15 @@ s = petstore.Petstore(
 )
 
 req = shared.Pet(
+    name='doggie',
+    photo_urls=[
+        'string',
+    ],
     category=shared.Category(
         id=1,
         name='Dogs',
     ),
     id=10,
-    name='doggie',
-    photo_urls=[
-        'string',
-    ],
     tags=[
         shared.Tag(),
     ],
@@ -386,15 +386,15 @@ s = petstore.Petstore(
 )
 
 req = shared.Pet(
+    name='doggie',
+    photo_urls=[
+        'string',
+    ],
     category=shared.Category(
         id=1,
         name='Dogs',
     ),
     id=10,
-    name='doggie',
-    photo_urls=[
-        'string',
-    ],
     tags=[
         shared.Tag(),
     ],
@@ -438,15 +438,15 @@ s = petstore.Petstore(
 )
 
 req = shared.Pet(
+    name='doggie',
+    photo_urls=[
+        'string',
+    ],
     category=shared.Category(
         id=1,
         name='Dogs',
     ),
     id=10,
-    name='doggie',
-    photo_urls=[
-        'string',
-    ],
     tags=[
         shared.Tag(),
     ],
@@ -529,8 +529,8 @@ s = petstore.Petstore(
 )
 
 req = operations.UploadFileRequest(
-    request_body='0xc7cca7F47D'.encode(),
-    pet_id=621158,
+    pet_id=565380,
+    request_body='0x7cca7F47Dd'.encode(),
 )
 
 res = s.pet.upload_file(req)
