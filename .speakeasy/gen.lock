@@ -4,7 +4,7 @@ management:
   docChecksum: a8e681acedc8975a9c8cc596c44ef897
   docVersion: 1.0.17
   speakeasyVersion: internal
-  generationVersion: 2.250.12
+  generationVersion: 2.253.0
   releaseVersion: 0.7.0
   configChecksum: 666ca0fc57118beabc9efa3e9a59ab57
   repoURL: https://github.com/speakeasy-sdks/test1q34234242.git

@@ -41,14 +41,7 @@ req = shared.Pet(
     photo_urls=[
         'string',
     ],
-    category=shared.Category(
-        id=1,
-        name='Dogs',
-    ),
     id=10,
-    tags=[
-        shared.Tag(),
-    ],
 )
 
 res = s.pet.add_pet_form(req)
@@ -93,14 +86,7 @@ req = shared.Pet(
     photo_urls=[
         'string',
     ],
-    category=shared.Category(
-        id=1,
-        name='Dogs',
-    ),
     id=10,
-    tags=[
-        shared.Tag(),
-    ],
 )
 
 res = s.pet.add_pet_json(req)
@@ -134,7 +120,6 @@ Add a new pet to the store
 
 ```python
 import petstore
-from petstore.models import shared
 
 s = petstore.Petstore(
     petstore_auth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
@@ -259,11 +244,7 @@ s = petstore.Petstore(
     petstore_auth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
 )
 
-req = operations.FindPetsByTagsRequest(
-    tags=[
-        'string',
-    ],
-)
+req = operations.FindPetsByTagsRequest()
 
 res = s.pet.find_pets_by_tags(req)
 
@@ -390,14 +371,7 @@ req = shared.Pet(
     photo_urls=[
         'string',
     ],
-    category=shared.Category(
-        id=1,
-        name='Dogs',
-    ),
     id=10,
-    tags=[
-        shared.Tag(),
-    ],
 )
 
 res = s.pet.update_pet_form(req)
@@ -442,14 +416,7 @@ req = shared.Pet(
     photo_urls=[
         'string',
     ],
-    category=shared.Category(
-        id=1,
-        name='Dogs',
-    ),
     id=10,
-    tags=[
-        shared.Tag(),
-    ],
 )
 
 res = s.pet.update_pet_json(req)
@@ -483,7 +450,6 @@ Update an existing pet by Id
 
 ```python
 import petstore
-from petstore.models import shared
 
 s = petstore.Petstore(
     petstore_auth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
@@ -530,7 +496,6 @@ s = petstore.Petstore(
 
 req = operations.UploadFileRequest(
     pet_id=565380,
-    request_body='0x7cca7F47Dd'.encode(),
 )
 
 res = s.pet.upload_file(req)

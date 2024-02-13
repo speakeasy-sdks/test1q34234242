@@ -12,14 +12,7 @@ req = shared.Pet(
     photo_urls=[
         'string',
     ],
-    category=shared.Category(
-        id=1,
-        name='Dogs',
-    ),
     id=10,
-    tags=[
-        shared.Tag(),
-    ],
 )
 
 res = s.pet.add_pet_form(req)

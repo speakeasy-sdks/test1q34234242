@@ -65,7 +65,6 @@ Returns a map of status codes to quantities
 
 ```python
 import petstore
-from petstore.models import operations
 
 s = petstore.Petstore()
 
@@ -141,7 +140,6 @@ Place a new order in the store
 ### Example Usage
 
 ```python
-import dateutil.parser
 import petstore
 from petstore.models import shared
 
@@ -186,7 +184,6 @@ Place a new order in the store
 ### Example Usage
 
 ```python
-import dateutil.parser
 import petstore
 from petstore.models import shared
 
@@ -231,9 +228,7 @@ Place a new order in the store
 ### Example Usage
 
 ```python
-import dateutil.parser
 import petstore
-from petstore.models import shared
 
 s = petstore.Petstore(
     petstore_auth="Bearer <YOUR_ACCESS_TOKEN_HERE>",

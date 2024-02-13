@@ -123,7 +123,6 @@ This can only be done by the logged in user.
 
 ```python
 import petstore
-from petstore.models import shared
 
 s = petstore.Petstore(
     petstore_auth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
@@ -364,7 +363,7 @@ This can only be done by the logged in user.
 
 ```python
 import petstore
-from petstore.models import operations, shared
+from petstore.models import operations
 
 s = petstore.Petstore(
     petstore_auth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
@@ -372,16 +371,6 @@ s = petstore.Petstore(
 
 req = operations.UpdateUserFormRequest(
     username='Bo_Lynch4',
-    user=shared.User(
-        email='john@email.com',
-        first_name='John',
-        id=10,
-        last_name='James',
-        password='12345',
-        phone='12345',
-        user_status=1,
-        username='theUser',
-    ),
 )
 
 res = s.user.update_user_form(req)
@@ -415,7 +404,7 @@ This can only be done by the logged in user.
 
 ```python
 import petstore
-from petstore.models import operations, shared
+from petstore.models import operations
 
 s = petstore.Petstore(
     petstore_auth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
@@ -423,16 +412,6 @@ s = petstore.Petstore(
 
 req = operations.UpdateUserJSONRequest(
     username='Alanna_Waters81',
-    user=shared.User(
-        email='john@email.com',
-        first_name='John',
-        id=10,
-        last_name='James',
-        password='12345',
-        phone='12345',
-        user_status=1,
-        username='theUser',
-    ),
 )
 
 res = s.user.update_user_json(req)
@@ -466,7 +445,7 @@ This can only be done by the logged in user.
 
 ```python
 import petstore
-from petstore.models import operations, shared
+from petstore.models import operations
 
 s = petstore.Petstore(
     petstore_auth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
@@ -474,7 +453,6 @@ s = petstore.Petstore(
 
 req = operations.UpdateUserRawRequest(
     username='Maximus.DuBuque29',
-    request_body='0xeFb836560B'.encode(),
 )
 
 res = s.user.update_user_raw(req)

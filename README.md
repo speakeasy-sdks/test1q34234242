@@ -32,14 +32,7 @@ req = shared.Pet(
     photo_urls=[
         'string',
     ],
-    category=shared.Category(
-        id=1,
-        name='Dogs',
-    ),
     id=10,
-    tags=[
-        shared.Tag(),
-    ],
 )
 
 res = s.pet.add_pet_form(req)
@@ -107,7 +100,7 @@ Handling errors in this SDK should largely match your expectations.  All operati
 
 ```python
 import petstore
-from petstore.models import shared
+from petstore.models import errors, shared
 
 s = petstore.Petstore(
     petstore_auth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
@@ -118,21 +111,14 @@ req = shared.Pet(
     photo_urls=[
         'string',
     ],
-    category=shared.Category(
-        id=1,
-        name='Dogs',
-    ),
     id=10,
-    tags=[
-        shared.Tag(),
-    ],
 )
 
 res = None
 try:
     res = s.pet.add_pet_form(req)
 except errors.SDKError as e:
-    print(e)  # handle exception
+    # handle exception
     raise(e)
 
 if res.pet is not None:
@@ -170,14 +156,7 @@ req = shared.Pet(
     photo_urls=[
         'string',
     ],
-    category=shared.Category(
-        id=1,
-        name='Dogs',
-    ),
     id=10,
-    tags=[
-        shared.Tag(),
-    ],
 )
 
 res = s.pet.add_pet_form(req)
@@ -205,14 +184,7 @@ req = shared.Pet(
     photo_urls=[
         'string',
     ],
-    category=shared.Category(
-        id=1,
-        name='Dogs',
-    ),
     id=10,
-    tags=[
-        shared.Tag(),
-    ],
 )
 
 res = s.pet.add_pet_form(req)
@@ -268,14 +240,7 @@ req = shared.Pet(
     photo_urls=[
         'string',
     ],
-    category=shared.Category(
-        id=1,
-        name='Dogs',
-    ),
     id=10,
-    tags=[
-        shared.Tag(),
-    ],
 )
 
 res = s.pet.add_pet_form(req)
