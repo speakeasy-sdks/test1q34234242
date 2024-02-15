@@ -39,7 +39,7 @@ s = petstore.Petstore(
 req = shared.Pet(
     name='doggie',
     photo_urls=[
-        'string',
+        '<value>',
     ],
     id=10,
 )
@@ -84,7 +84,7 @@ s = petstore.Petstore(
 req = shared.Pet(
     name='doggie',
     photo_urls=[
-        'string',
+        '<value>',
     ],
     id=10,
 )
@@ -369,7 +369,7 @@ s = petstore.Petstore(
 req = shared.Pet(
     name='doggie',
     photo_urls=[
-        'string',
+        '<value>',
     ],
     id=10,
 )
@@ -414,7 +414,7 @@ s = petstore.Petstore(
 req = shared.Pet(
     name='doggie',
     photo_urls=[
-        'string',
+        '<value>',
     ],
     id=10,
 )
