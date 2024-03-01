@@ -2,6 +2,7 @@
 
 
 import requests as requests_http
+from ._hooks import SDKHooks
 from .utils import utils
 from .utils.retries import RetryConfig
 from dataclasses import dataclass
@@ -22,10 +23,11 @@ class SDKConfiguration:
     server_idx: int = 0
     language: str = 'python'
     openapi_doc_version: str = '1.0.17'
-    sdk_version: str = '0.7.1'
-    gen_version: str = '2.258.2'
-    user_agent: str = 'speakeasy-sdk/python 0.7.1 2.258.2 1.0.17 petstore'
+    sdk_version: str = '0.8.0'
+    gen_version: str = '2.275.4'
+    user_agent: str = 'speakeasy-sdk/python 0.8.0 2.275.4 1.0.17 petstore'
     retry_config: RetryConfig = None
+    _hooks: SDKHooks = None
 
     def get_server_details(self) -> Tuple[str, Dict[str, str]]:
         if self.server_url:
@@ -34,3 +36,7 @@ class SDKConfiguration:
             self.server_idx = 0
 
         return SERVERS[self.server_idx], {}
+
+
+    def get_hooks(self) -> SDKHooks:
+        return self._hooks

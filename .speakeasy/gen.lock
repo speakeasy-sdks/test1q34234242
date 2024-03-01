@@ -4,17 +4,17 @@ management:
   docChecksum: a8e681acedc8975a9c8cc596c44ef897
   docVersion: 1.0.17
   speakeasyVersion: internal
-  generationVersion: 2.258.2
-  releaseVersion: 0.7.1
-  configChecksum: efe40970ae920eea86f6f2ceafea9d67
+  generationVersion: 2.275.4
+  releaseVersion: 0.8.0
+  configChecksum: f3fb544a359ad0c8ff74e8da7db85190
   repoURL: https://github.com/speakeasy-sdks/test1q34234242.git
   repoSubDirectory: .
   installationURL: https://github.com/speakeasy-sdks/test1q34234242.git
 features:
   python:
     constsAndDefaults: 0.1.2
-    core: 4.4.6
-    globalSecurity: 2.83.2
+    core: 4.5.0
+    globalSecurity: 2.83.4
     globalServerURLs: 2.82.1
     methodSecurity: 2.82.1
 generatedFiles:
@@ -132,3 +132,6 @@ generatedFiles:
   - docs/sdks/user/README.md
   - USAGE.md
   - .gitattributes
+  - src/petstore/_hooks/sdkhooks.py
+  - src/petstore/_hooks/types.py
+  - src/petstore/_hooks/__init__.py
