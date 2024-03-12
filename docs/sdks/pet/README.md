@@ -49,6 +49,7 @@ res = s.pet.add_pet_form(req)
 if res.pet is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -94,6 +95,7 @@ res = s.pet.add_pet_json(req)
 if res.pet is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -132,6 +134,7 @@ res = s.pet.add_pet_raw(req)
 if res.pet is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -170,9 +173,10 @@ req = operations.DeletePetRequest(
 
 res = s.pet.delete_pet(req)
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -212,6 +216,7 @@ res = s.pet.find_pets_by_status(req)
 if res.two_hundred_application_json_classes is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -251,6 +256,7 @@ res = s.pet.find_pets_by_tags(req)
 if res.two_hundred_application_json_classes is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -292,6 +298,7 @@ res = s.pet.get_pet_by_id(req, operations.GetPetByIDSecurity(
 if res.pet is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -331,9 +338,10 @@ req = operations.UpdatePetWithFormRequest(
 
 res = s.pet.update_pet_with_form(req)
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -379,6 +387,7 @@ res = s.pet.update_pet_form(req)
 if res.pet is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -424,6 +433,7 @@ res = s.pet.update_pet_json(req)
 if res.pet is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -462,6 +472,7 @@ res = s.pet.update_pet_raw(req)
 if res.pet is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -503,6 +514,7 @@ res = s.pet.upload_file(req)
 if res.api_response is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
