@@ -40,6 +40,7 @@ res = s.pet.add_pet_form(req)
 if res.pet is not None:
     # handle response
     pass
+
 ```
 <!-- End SDK Example Usage [usage] -->
 
@@ -124,6 +125,7 @@ except errors.SDKError as e:
 if res.pet is not None:
     # handle response
     pass
+
 ```
 <!-- End Error Handling [errors] -->
 
@@ -164,6 +166,7 @@ res = s.pet.add_pet_form(req)
 if res.pet is not None:
     # handle response
     pass
+
 ```
 
 
@@ -192,6 +195,7 @@ res = s.pet.add_pet_form(req)
 if res.pet is not None:
     # handle response
     pass
+
 ```
 <!-- End Server Selection [server] -->
 
@@ -248,6 +252,7 @@ res = s.pet.add_pet_form(req)
 if res.pet is not None:
     # handle response
     pass
+
 ```
 
 ### Per-Operation Security Schemes
@@ -270,6 +275,7 @@ res = s.pet.get_pet_by_id(req, operations.GetPetByIDSecurity(
 if res.pet is not None:
     # handle response
     pass
+
 ```
 <!-- End Authentication [security] -->
 
