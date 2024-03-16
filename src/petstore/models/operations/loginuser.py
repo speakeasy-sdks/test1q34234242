@@ -25,9 +25,9 @@ class LoginUserResponse:
     r"""HTTP response status code for this operation"""
     raw_response: requests_http.Response = dataclasses.field()
     r"""Raw HTTP response; suitable for custom response parsing"""
-    two_hundred_application_json_res: Optional[str] = dataclasses.field(default=None)
+    res: Optional[str] = dataclasses.field(default=None)
     r"""successful operation"""
-    two_hundred_application_xml_res: Optional[str] = dataclasses.field(default=None)
+    string: Optional[str] = dataclasses.field(default=None)
     r"""successful operation"""
     
 

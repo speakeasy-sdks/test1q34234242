@@ -36,9 +36,10 @@ req = operations.DeleteOrderRequest(
 
 res = s.store.delete_order(req)
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -74,6 +75,7 @@ res = s.store.get_inventory("<YOUR_API_KEY_HERE>")
 if res.object is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -115,6 +117,7 @@ res = s.store.get_order_by_id(req)
 if res.order is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -159,6 +162,7 @@ res = s.store.place_order_form(req)
 if res.order is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -203,6 +207,7 @@ res = s.store.place_order_json(req)
 if res.order is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -241,6 +246,7 @@ res = s.store.place_order_raw(req)
 if res.order is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
