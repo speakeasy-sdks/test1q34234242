@@ -23,9 +23,9 @@ class SDKConfiguration:
     server_idx: int = 0
     language: str = 'python'
     openapi_doc_version: str = '1.0.17'
-    sdk_version: str = '0.8.0'
-    gen_version: str = '2.275.4'
-    user_agent: str = 'speakeasy-sdk/python 0.8.0 2.275.4 1.0.17 petstore'
+    sdk_version: str = '0.9.0'
+    gen_version: str = '2.286.7'
+    user_agent: str = 'speakeasy-sdk/python 0.9.0 2.286.7 1.0.17 petstore'
     retry_config: RetryConfig = None
     _hooks: SDKHooks = None
 

@@ -3,26 +3,28 @@ id: a0be4322-b0f7-48a4-84e6-b4b54a9466b8
 management:
   docChecksum: a8e681acedc8975a9c8cc596c44ef897
   docVersion: 1.0.17
-  speakeasyVersion: internal
-  generationVersion: 2.275.4
-  releaseVersion: 0.8.0
-  configChecksum: f3fb544a359ad0c8ff74e8da7db85190
+  speakeasyVersion: 1.219.2
+  generationVersion: 2.286.7
+  releaseVersion: 0.9.0
+  configChecksum: 171ac99763aa579bc8483c4e72e64b31
   repoURL: https://github.com/speakeasy-sdks/test1q34234242.git
   repoSubDirectory: .
   installationURL: https://github.com/speakeasy-sdks/test1q34234242.git
 features:
   python:
-    constsAndDefaults: 0.1.2
-    core: 4.5.0
-    globalSecurity: 2.83.4
-    globalServerURLs: 2.82.1
+    constsAndDefaults: 0.1.3
+    core: 4.5.1
+    globalSecurity: 2.83.5
+    globalServerURLs: 2.82.2
     methodSecurity: 2.82.1
+    responseFormat: 0.1.0
 generatedFiles:
   - src/petstore/sdkconfiguration.py
   - src/petstore/pet.py
   - src/petstore/store.py
   - src/petstore/user.py
   - src/petstore/sdk.py
+  - py.typed
   - pylintrc
   - setup.py
   - src/petstore/__init__.py
