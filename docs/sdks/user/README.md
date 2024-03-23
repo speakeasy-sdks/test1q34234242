@@ -46,9 +46,10 @@ req = shared.User(
 
 res = s.user.create_user_form(req)
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -94,9 +95,10 @@ req = shared.User(
 
 res = s.user.create_user_json(req)
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -132,9 +134,10 @@ req = '0xB4dDB1Eeed'.encode()
 
 res = s.user.create_user_raw(req)
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -185,6 +188,7 @@ res = s.user.create_users_with_list_input(req)
 if res.user is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -223,9 +227,10 @@ req = operations.DeleteUserRequest(
 
 res = s.user.delete_user(req)
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -267,6 +272,7 @@ res = s.user.get_user_by_name(req)
 if res.user is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -303,9 +309,10 @@ req = operations.LoginUserRequest()
 
 res = s.user.login_user(req)
 
-if res.two_hundred_application_json_res is not None:
+if res.string is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -340,9 +347,10 @@ s = petstore.Petstore(
 
 res = s.user.logout_user()
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 
@@ -375,9 +383,10 @@ req = operations.UpdateUserFormRequest(
 
 res = s.user.update_user_form(req)
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -416,9 +425,10 @@ req = operations.UpdateUserJSONRequest(
 
 res = s.user.update_user_json(req)
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -457,9 +467,10 @@ req = operations.UpdateUserRawRequest(
 
 res = s.user.update_user_raw(req)
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
