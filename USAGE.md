@@ -20,5 +20,6 @@ res = s.pet.add_pet_form(req)
 if res.pet is not None:
     # handle response
     pass
+
 ```
 <!-- End SDK Example Usage [usage] -->
